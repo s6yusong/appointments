@@ -1,0 +1,7 @@
+<div class="container">
+  <app-multi-select [title]="selectionTitle" [dataList]="selectionData" [selectedDate]="selectedDate"></app-multi-select>
+
+  <app-appointments-table *ngIf="tableData.length > 0" [appointments]="tableData" [selectedDate]="selectedDate" view="Month"></app-appointments-table>
+</div>
+
+

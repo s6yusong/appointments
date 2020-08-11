@@ -1,0 +1,30 @@
+<mat-spinner *ngIf="loading" style="top:100px; margin:0 auto;"></mat-spinner>
+<ngb-alert *ngIf="errorMsg" [dismissible]="false">
+  {{ errorMsg }}
+</ngb-alert>
+<div class="container" *ngIf="!loading && !errorMsg">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{appointmentData.appointment.subject}}</mat-card-title>
+      <mat-card-subtitle>{{appointmentData.appointment.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="margin:20px">
+      <div class="basic-info">
+        <p>Location:  {{appointmentData.appointment.location}}</p>
+        <p>Date:  {{appointmentData.appointment.date.date}}</p>
+        <p>Time:  {{appointmentData.appointment.date.start_time}} {{appointmentData.appointment.date.end_time}}</p>
+        <p>Attendees:  {{appointmentData.appointment.attendees}}</p>
+      </div>
+      <br>
+      <div class="organizer-info">
+        <h6>Organizer</h6>
+        <div class="appointment-text-info">
+          <p>Name:  {{appointmentData.organizer.first_name}} {{appointmentData.organizer.last_name}}</p>
+          <p>telephone:  {{appointmentData.organizer.telephone}}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
